@@ -11,7 +11,22 @@ repositories {
     mavenCentral()
 }
 
+gradlePlugin {
+    plugins {
+        create("KrakenPlugin") {
+            id = "com.rshub.gradle"
+            implementationClass = "com.rshub.gradle.KrakenGradlePlugin"
+        }
+    }
+}
+
 dependencies {
     implementation(kotlin("stdlib"))
     implementation(kotlin("gradle-plugin"))
+}
+
+publishing {
+    repositories {
+        mavenLocal()
+    }
 }
