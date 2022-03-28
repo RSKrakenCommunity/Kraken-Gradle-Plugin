@@ -70,7 +70,7 @@ class KrakenGradlePlugin @Inject internal constructor(private val registry: Tool
             it.finalizedBy(target.tasks.named("copy"))
         }
 
-        target.tasks.named("copy", Copy::class.java) {
+        target.tasks.create("copy", Copy::class.java) {
             val file = File(config.krakenPluginLocation.get())
             if(file.exists()) {
                 it.from(target.tasks.named("jar"))
