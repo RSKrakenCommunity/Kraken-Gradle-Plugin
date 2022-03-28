@@ -63,7 +63,8 @@ class KrakenGradlePlugin @Inject internal constructor(private val registry: Tool
             }
         }
 
-        target.tasks.named("Jar", Jar::class.java) {
+
+        target.tasks.named("jar", Jar::class.java) {
             it.duplicatesStrategy = DuplicatesStrategy.EXCLUDE
             target.configurations.named("runtimeClasspath").get().map { t -> if(t.isDirectory) t else target.zipTree(t) }
             it.finalizedBy(target.tasks.named("copy"))
