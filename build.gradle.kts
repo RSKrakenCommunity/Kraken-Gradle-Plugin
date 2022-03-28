@@ -12,11 +12,9 @@ repositories {
 }
 
 gradlePlugin {
-    plugins {
-        create("KrakenPlugin") {
-            id = "com.rshub.gradle"
-            implementationClass = "com.rshub.gradle.KrakenGradlePlugin"
-        }
+    val kraken by plugins.creating {
+        id = "com.rshub.gradle"
+        implementationClass = "com.rshub.gradle.KrakenGradlePlugin"
     }
 }
 
