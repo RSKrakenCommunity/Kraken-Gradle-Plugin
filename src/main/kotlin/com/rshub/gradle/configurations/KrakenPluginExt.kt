@@ -20,7 +20,6 @@ abstract class KrakenPluginExt(val project: Project) {
             for (value in modules) {
                 when (value) {
                     CommunityModules.KRAKEN.moduleName -> {
-                        println("Adding Kraken Module!")
                         add(
                             configuration.get(),
                             "com.github.RSKraken:KrakenAPI:master-SNAPSHOT"
