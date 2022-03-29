@@ -43,6 +43,10 @@ class KrakenGradlePlugin : Plugin<Project> {
                     .map { t -> if (t.isDirectory) t else target.zipTree(t) }
                 finalizedBy(target.tasks.named("copy"))
             }
+
+            if (config.isSDNPlugin && config.modules.isNotEmpty()) {
+                throw IllegalStateException("Can't use community api and push to SDN.")
+            }
         }
     }
 }
