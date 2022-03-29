@@ -8,6 +8,4 @@ enum class CommunityModules(val moduleName: String, vararg val deps: CommunityMo
     DEFINITIONS("definitions", FILESYSTEM),
     IMGUI("imgui", KRAKEN),
     API("community-api", KRAKEN, FILESYSTEM, DEFINITIONS, UTILITIES),
-
-
 }
